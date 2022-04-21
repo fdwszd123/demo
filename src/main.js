@@ -1,4 +1,10 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
+import registerFormatTime from "./directives";
+import plugins from "./plugins/index";
+const app = createApp(App);
+app.use(plugins.plugin);
 
-createApp(App).mount('#app')
+registerFormatTime(app);
+
+app.mount("#app");
